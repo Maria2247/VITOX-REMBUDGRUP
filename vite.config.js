@@ -31,6 +31,15 @@ export default defineConfig(({ command }) => {
             if (assetInfo.name && assetInfo.name.endsWith('.html')) {
               return '[name].[ext]';
             }
+
+            const isImage = /\.(png|jpe?g|svg|gif|tiff|bmp|ico)$/i.test(
+              assetInfo.name
+            );
+            const isManifest = assetInfo.name === 'site.webmanifest';
+
+            if (isImage || isManifest) {
+              return 'img/[name][extname]';
+            }
             return 'assets/[name]-[hash][extname]';
           },
         },

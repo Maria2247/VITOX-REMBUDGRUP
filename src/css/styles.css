@@ -148,7 +148,7 @@
 /* --------HERO------- */
 
 .hero-container {
-  background-image: url('../../public/img/hero-bg.png');
+  background-image: url('../img/hero-bg.pngs');
   background-color: var(--bg-color);
   background-repeat: no-repeat;
   background-position: right;
@@ -214,7 +214,7 @@
 }
 
 .section-header-holder {
-  background-image: url('../../public/img/line.png');
+  background-image: url('../img/line.png');
   background-size: contain;
   background-repeat: no-repeat;
   margin-bottom: 16px;
