@@ -32,14 +32,22 @@ export default defineConfig(({ command }) => {
               return '[name].[ext]';
             }
 
+            const isManifest = assetInfo.name === 'site.webmanifest';
+            const isFavicon =
+              assetInfo.name.includes('favicon') ||
+              assetInfo.name.includes('apple-touch-icon');
+
+            if (isManifest || isFavicon) {
+              return '[name][extname]';
+            }
+
             const isImage = /\.(png|jpe?g|svg|gif|tiff|bmp|ico)$/i.test(
               assetInfo.name
             );
-            const isManifest = assetInfo.name === 'site.webmanifest';
-
-            if (isImage || isManifest) {
+            if (isImage) {
               return 'img/[name][extname]';
             }
+
             return 'assets/[name]-[hash][extname]';
           },
         },
@@ -56,3 +64,7 @@ export default defineConfig(({ command }) => {
     ],
   };
 });
+
+// const isImage = /\.(png|jpe?g|svg|gif|tiff|bmp|ico)$/i.test(
+//   assetInfo.name
+// );
