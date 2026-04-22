@@ -44,7 +44,7 @@ export default defineConfig(({ command }) => {
             const isImage = /\.(png|jpe?g|svg|gif|tiff|bmp|ico)$/i.test(
               assetInfo.name
             );
-            if (isImage) {
+            if (isImage && !isFavicon) {
               return 'img/[name][extname]';
             }
 
