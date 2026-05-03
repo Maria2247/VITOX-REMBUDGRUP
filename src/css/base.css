@@ -16,7 +16,9 @@ body {
   overflow-x: hidden;
   -webkit-overflow-scrolling: touch;
 }
-* {
+*,
+*::before,
+*::after {
   box-sizing: border-box;
 }
 body {

@@ -8,25 +8,52 @@ import 'swiper/css/navigation';
 import 'swiper/css/pagination';
 import 'swiper/css/effect-fade';
 
+// LOAD MORE
+
+const loadMoreBtn = document.querySelector('#load-more');
+const allProjects = document.querySelectorAll('.projects-item');
+let visibleCount = 2;
+
+const showProjects = () => {
+  allProjects.forEach((item, index) => {
+    if (index < visibleCount) {
+      item.classList.add('is-visible');
+    }
+  });
+
+  if (visibleCount >= allProjects.length) {
+    loadMoreBtn.classList.add('is-hidden');
+  }
+};
+
+showProjects();
+
+loadMoreBtn.addEventListener('click', () => {
+  visibleCount += 2;
+  showProjects();
+});
+
+window.dispatchEvent(new Event('resize'));
+
 // SWIPER
-const projectSliders = document.querySelectorAll('.project-item');
+const projectSliders = document.querySelectorAll('.projects-item');
 
-projectSliders.forEach(item => {
-  const container = item.querySelector('.swiper');
-  const nextBtn = item.querySelector('.swiper-button-next');
-  const prevBtn = item.querySelector('.swiper-button-prev');
+projectSliders.forEach((item, index) => {
+  const swiperEl = item.querySelector('.swiper');
+  if (!swiperEl) return;
 
-  new Swiper(container, {
+  new Swiper(swiperEl, {
     modules: [Navigation, Pagination, EffectFade],
     speed: 600,
     effect: 'fade',
+    slidesPerView: 1,
     fadeEffect: {
       crossFade: true,
     },
     rewind: true,
     navigation: {
-      nextEl: nextBtn,
-      prevEl: prevBtn,
+      nextEl: item.querySelector('.swiper-button-next'),
+      prevEl: item.querySelector('.swiper-button-prev'),
     },
     pagination: {
       el: item.querySelector('.swiper-pagination'),
@@ -35,10 +62,6 @@ projectSliders.forEach(item => {
     },
   });
 });
-
-// swiper.allowSlideNext(true);
-// swiper.allowSlidePrev(true);
-// swiper.allowTouchMove(true);
 
 // ACCORDION
 
