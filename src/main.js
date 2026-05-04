@@ -8,6 +8,19 @@ import 'swiper/css/navigation';
 import 'swiper/css/pagination';
 import 'swiper/css/effect-fade';
 
+// FIXED HEADER
+
+const header = document.querySelector('.header-container');
+const stickyPoint = header.offsetTop;
+
+window.addEventListener('scroll', () => {
+  if (window.scrollY > stickyPoint) {
+    header.classList.add('is-fixed');
+  } else {
+    header.classList.remove('is-fixed');
+  }
+});
+
 // LOAD MORE
 
 const loadMoreBtn = document.querySelector('#load-more');

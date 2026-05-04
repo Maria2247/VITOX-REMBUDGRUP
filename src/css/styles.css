@@ -7,6 +7,11 @@
 
 /* General */
 
+html {
+  scroll-padding-top: 80px;
+  scroll-behavior: smooth;
+}
+
 .dots {
   display: flex;
   gap: 10px;
@@ -66,19 +71,33 @@
 /* -------HEADER------- */
 
 .header-container {
-  position: fixed;
-  top: 0;
-  left: 0;
-  right: 0;
-  z-index: 100;
   width: 100%;
-  isolation: isolate;
+  margin: 0 auto;
   display: flex;
   justify-content: space-between;
   align-items: center;
   padding: 0 32px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
   background-color: var(--bg-color);
+}
+
+.header-spacer {
+  display: none;
+  height: 70px;
+}
+
+.header-container.is-fixed {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  max-width: 1200px;
+  z-index: 1000;
+  opacity: 0.95;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.header-container.is-fixed + .header-spacer {
+  display: block;
 }
 
 .nav-logo {
@@ -202,7 +221,7 @@
 /* --------HERO------- */
 
 .section-hero {
-  margin-top: 74px;
+  margin-top: 4px;
   margin-bottom: 24px;
 }
 
@@ -215,6 +234,7 @@
   /* padding: 0 16px; */
   overflow: hidden;
 }
+
 .hero-text-holder {
   padding: 40px 0 30px;
 }
@@ -265,7 +285,7 @@
 
 .section-about {
   margin-bottom: 24px;
-  scroll-margin-top: 72px;
+  /* scroll-margin-top: 72px; */
 }
 
 .about-container {
@@ -336,7 +356,7 @@
 
 .section-services {
   margin-bottom: 24px;
-  scroll-margin-top: 72px;
+  /* scroll-margin-top: 72px; */
 }
 
 .services-container {
@@ -365,7 +385,6 @@
 
 .section-projects {
   margin-bottom: 24px;
-  scroll-margin-top: 72px;
   overflow: hidden;
 }
 
