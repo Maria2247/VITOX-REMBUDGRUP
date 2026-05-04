@@ -79,11 +79,6 @@
   padding: 0 32px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
   background-color: var(--bg-color);
-
-  /* FORCE IPHONE STABILITY */
-  /* -webkit-transform: translateZ(0);
-  transform: translateZ(0);
-  will-change: transform; */
 }
 
 .nav-logo {
@@ -217,10 +212,10 @@
   background-position: right;
   background-size: cover;
   background-color: var(--bg-color);
-  padding: 0 16px;
+  padding: 0 26px;
 }
 .hero-text-holder {
-  padding: 40px 10px 30px;
+  padding: 40px 0 30px;
 }
 
 .hero-header {
@@ -604,7 +599,7 @@ footer {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 10px 16px;
+  padding: 10px 26px;
 }
 
 .footer-logo {
