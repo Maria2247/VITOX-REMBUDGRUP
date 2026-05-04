@@ -101,7 +101,7 @@ html {
 }
 
 .nav-logo {
-  max-width: 120px;
+  width: 120px;
 }
 
 .menu-toggle {
@@ -285,7 +285,6 @@ html {
 
 .section-about {
   margin-bottom: 24px;
-  /* scroll-margin-top: 72px; */
 }
 
 .about-container {
@@ -356,7 +355,6 @@ html {
 
 .section-services {
   margin-bottom: 24px;
-  /* scroll-margin-top: 72px; */
 }
 
 .services-container {
@@ -547,7 +545,6 @@ html {
 
 .section-contacts {
   margin-bottom: 24px;
-  scroll-margin-top: 72px;
 }
 
 .contacts-container .section-header {
