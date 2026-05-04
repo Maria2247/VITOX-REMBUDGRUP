@@ -18,11 +18,15 @@ const showProjects = () => {
   allProjects.forEach((item, index) => {
     if (index < visibleCount) {
       item.classList.add('is-visible');
+    } else {
+      item.classList.remove('is-visible');
     }
   });
 
   if (visibleCount >= allProjects.length) {
     loadMoreBtn.classList.add('is-hidden');
+  } else {
+    loadMoreBtn.classList.remove('is-hiiden');
   }
 };
 
@@ -32,6 +36,16 @@ loadMoreBtn.addEventListener('click', () => {
   visibleCount += 2;
   showProjects();
 });
+
+const resetProjects = () => {
+  visibleCount = 2;
+
+  allProjects.forEach(item => {
+    item.classList.remove('is-visible');
+  });
+
+  showProjects();
+};
 
 window.dispatchEvent(new Event('resize'));
 
@@ -78,6 +92,7 @@ const decorDots = document.getElementsByClassName('.nav-dots');
 const openMenu = document.getElementById('nav-menu');
 const closeBtn = document.getElementById('close-btn');
 const navLink = document.querySelectorAll('.nav-item a');
+const logoLink = document.querySelectorAll('a[href="#"]');
 
 burgerBtn.addEventListener('click', () => {
   openMenu.classList.add('is-open');
@@ -94,6 +109,11 @@ closeBtn.addEventListener('click', closeMobileNav);
 
 navLink.forEach(link => {
   link.addEventListener('click', closeMobileNav);
+  link.addEventListener('click', resetProjects);
+});
+
+logoLink.forEach(link => {
+  link.addEventListener('click', resetProjects);
 });
 
 openMenu.addEventListener('click', e => {
