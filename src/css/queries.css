@@ -9,6 +9,7 @@
     font-size: 28px;
     text-align: center;
     padding-left: 12px;
+    margin: 0 auto;
   }
 
   /* -------HEADER------- */
@@ -57,8 +58,8 @@
   /* --------HERO------- */
 
   .section-hero {
-    margin-top: 92px;
-    padding: 0 16px;
+    margin: 92px auto 24px;
+    /* padding: 0 16px; */
   }
 
   .hero-container {
@@ -72,7 +73,7 @@
     font-size: 36px;
     letter-spacing: 1.5px;
     line-height: 2;
-    margin-bottom: 12px;
+    margin-bottom: 18px;
   }
 
   .hero-header-en {
@@ -102,7 +103,9 @@
 
   .about-description {
     display: flex;
-    align-items: center;
+    align-items: flex-start;
+    gap: 16px;
+    padding-top: 16px;
   }
   .about-img {
     display: block;
@@ -135,8 +138,17 @@
 
   /* -----CONTACTS---- */
 
+  .section-contacts {
+    scroll-margin-top: 92px;
+  }
+
+  .contacts-container .section-header {
+    margin-bottom: 28px;
+  }
+
   .contacts-holder {
     font-size: 18px;
+    gap: 12px;
   }
 
   .icon-map-pin,
@@ -171,13 +183,202 @@
   }
 
   .copyright-wrap {
-    padding: 0 16px;
     font-size: 12px;
+  }
+
+  .attribution {
+    padding-right: 16px;
   }
 }
 /* Styles for Desktop devices */
-@media only screen and (min-width: 1200px) {
-  .container {
-    max-width: 1200px;
+@media only screen and (min-width: 1024px) {
+  .section-header-holder {
+    background-position-x: 50%;
+  }
+
+  .section-header {
+    font-size: 32px;
+    padding-right: 16px;
+    padding-left: 0;
+  }
+
+  /* -------HEADER------- */
+  .nav-logo {
+    max-width: 170px;
+  }
+
+  .main-nav {
+    font-size: 24px;
+  }
+
+  /* --------HERO------- */
+  .section-hero {
+    margin-top: 112px;
+  }
+  .hero-header {
+    font-size: 52px;
+    margin-bottom: 22px;
+  }
+
+  .hero-code-holder {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    margin-bottom: 44px;
+  }
+
+  .hero-header-en {
+    font-size: 24px;
+    max-width: 500px;
+    margin-bottom: 16px;
+    padding-right: 0;
+  }
+
+  .code {
+    font-size: 18px;
+    align-self: flex-start;
+    border-left: none;
+    padding-left: 0;
+    opacity: 0.8;
+  }
+
+  .dots {
+    gap: 16px;
+  }
+
+  .dots span {
+    width: 18px;
+    height: 18px;
+    border-radius: 50%;
+    background-color: var(--accent-color);
+  }
+
+  .hero-slogan {
+    font-size: 24px;
+  }
+
+  .desktop-box {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .hero-buildings {
+    display: block;
+    width: 250px;
+    opacity: 0.8;
+  }
+
+  /* ------ABOUT US------ */
+
+  .section-about {
+    scroll-margin-top: 112px;
+  }
+
+  .about-container {
+    font-size: 18px;
+  }
+
+  .about-container h3 {
+    font-size: 22px;
+  }
+
+  .accordion-container {
+    padding-bottom: 24px;
+    padding-left: 64px;
+    padding-right: 64px;
+  }
+
+  .accordion-container .ac .ac-trigger {
+    font-size: 20px;
+    font-weight: 500;
+  }
+
+  .ac .ac-panel .ac-text {
+    font-size: 18px;
+  }
+
+  /* ------SERVICES------- */
+
+  .section-services {
+    scroll-margin-top: 112px;
+  }
+
+  .services-container p {
+    font-size: 18px;
+  }
+
+  .services-container h3 {
+    font-size: 22px;
+  }
+
+  .services-list {
+    font-size: 18px;
+  }
+
+  /* --------PROJECTS------- */
+
+  .section-projects {
+    scroll-margin-top: 112px;
+  }
+
+  .projects-item h3 {
+    font-size: 22px;
+  }
+
+  .projects-item .project-descr {
+    font-size: 18px;
+  }
+
+  .swiper-button-next,
+  .swiper-button-prev {
+    --swiper-navigation-size: 22px;
+  }
+
+  .load-more-btn {
+    font-size: 22px;
+    padding: 8px 18px;
+  }
+
+  /* -----CONTACTS---- */
+
+  .section-contacts {
+    scroll-margin-top: 112px;
+  }
+
+  .contacts-container .section-header {
+    padding-left: 44px;
+    margin-bottom: 36px;
+  }
+
+  .contacts-holder {
+    font-size: 20px;
+    gap: 16px;
+  }
+
+  .icon-map-pin,
+  .icon-phone,
+  .icon-mail {
+    width: 20px;
+    height: 20px;
+  }
+
+  /* --------FOOTER----- */
+
+  .footer-container {
+    padding: 16px 44px;
+  }
+
+  .footer-logo {
+    max-width: 190px;
+  }
+
+  .footer-slogan {
+    font-size: 20px;
+  }
+
+  .ribbon-icon {
+    width: 70px;
+    height: 80px;
   }
 }
