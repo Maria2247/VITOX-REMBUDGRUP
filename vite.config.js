@@ -5,8 +5,10 @@ import FullReload from 'vite-plugin-full-reload';
 import SortCss from 'postcss-sort-media-queries';
 
 export default defineConfig(({ command }) => {
+  // const isGitHub = process.env.GITHUB_ACTIONS === 'true';
   return {
-    base: '/vitox-rembudgrup/',
+    base: './',
+    // base: isGitHub ? '/vitox-rembudgrup/' : '/',
     define: {
       [command === 'serve' ? 'global' : '_global']: {},
     },
